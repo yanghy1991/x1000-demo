@@ -1,0 +1,7 @@
+objects = cJSON.o mkdir.o main.o socket_fun.o szhy_content.o
+main:$(objects)
+	g++ -o main $(objects)
+$(objects): cJSON.h mkdir.h socket_fun.h szhy_content.h 
+.PHONY:clean
+clean:
+	rm -rf main $(objects)

@@ -1,0 +1,7 @@
+objects = cJSON.o city_ipinfo.o get_city_from_ipinfo.o
+get_city_from_ipinfo:$(objects)
+	g++ -o get_city_from_ipinfo $(objects)
+$(objects): cJSON.h city_ipinfo.h
+.PHONY:clean
+clean:
+	rm -rf get_city_from_ipinfo $(objects)

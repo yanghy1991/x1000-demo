@@ -1,0 +1,7 @@
+objects = cJSON.o bd_token.o socket_fun.o mkdir.o
+get_bd_token:$(objects)
+	gcc -o libbdaccesstoken.so $(objects) -lm -shared -fPIC
+$(objects): cJSON.h bd_token.h mkdir.h
+.PHONY:clean
+clean:
+	rm -rf libbdaccesstoken.so $(objects)

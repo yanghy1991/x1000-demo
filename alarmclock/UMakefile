@@ -1,0 +1,7 @@
+objects = cJSON.o set_clock.o 
+set_clock:$(objects)
+	g++ -o set_clock $(objects)
+$(objects): cJSON.h 
+.PHONY:clean
+clean:
+	rm -rf set_clock $(objects)

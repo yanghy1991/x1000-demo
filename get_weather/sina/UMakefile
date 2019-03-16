@@ -1,0 +1,7 @@
+objects = cJSON.o sina_weather.o get_sina_weather.o
+get_sina_weather:$(objects)
+	g++ -o get_sina_weather $(objects)
+$(objects): cJSON.h sina_weather.h
+.PHONY:clean
+clean:
+	rm -rf get_sina_weather $(objects)

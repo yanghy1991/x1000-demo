@@ -1,0 +1,7 @@
+objects = cJSON.o base64.o bd_asr.o socket_fun.o mkdir.o
+libbdasr.so:$(objects)
+	gcc -o libbdasr.so  $(objects) -lm -shared -fPIC
+$(objects): cJSON.h base64.h bd_asr.h mkdir.h socket_fun.h
+.PHONY:clean
+clean:
+	rm -rf libbdasr.so $(objects)

@@ -1,0 +1,7 @@
+objects = cJSON.o bureau_weather.o get_bureau_weather.o
+get_bureau_weather:$(objects)
+	g++ -o get_bureau_weather $(objects)
+$(objects): cJSON.h bureau_weather.h
+.PHONY:clean
+clean:
+	rm -rf get_bureau_weather $(objects)
